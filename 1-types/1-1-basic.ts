@@ -43,11 +43,10 @@
   }
   let unusable: void = undefined; // 💩
 
-  // never
+  // never - 다른것을 리턴할 수 없다
   function throwError(message: string): never {
     // message -> server (log)
     throw new Error(message);
-    while (true) {}
   }
   let neverEnding: never; // 💩
 

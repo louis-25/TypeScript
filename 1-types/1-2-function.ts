@@ -31,7 +31,7 @@
 
   // JavaScript ✨ => TypeScript
   // Optional parameter
-  function printName(firstName: string, lastName?: string) {
+  function printName(firstName: string, lastName?: string) { //lastName에 문자를 전달해도되고 전달안해도된다
     console.log(firstName);
     console.log(lastName); // undefined
   }
