@@ -1,11 +1,12 @@
+import { Component } from './components/component.js';
 import { ImageComponent } from './components/page/item/image.js';
 import { NoteComponent } from './components/page/item/note.js';
 import { TodoComponent } from './components/page/item/todo.js';
 import { VideoComponent } from './components/page/item/video.js';
-import { PageComponent } from './components/page/page.js';
+import { Composable, PageComponent } from './components/page/page.js';
 
 class App {
-    private readonly page: PageComponent;
+    private readonly page: Component & Composable;
     
     //.document를 전달받음
     constructor(appRoot: HTMLElement) { //appRoot는 HTMLElement타입이다
@@ -13,16 +14,20 @@ class App {
         this.page.attachTo(appRoot);
 
         const image = new ImageComponent('Image Title', 'https://picsum.photos/600/300');;
-        image.attachTo(appRoot, 'beforeend');
+        //image.attachTo(appRoot, 'beforeend');
+        this.page.addChild(image);
 
         const note = new NoteComponent('Note Title', 'Note Body');
-        note.attachTo(appRoot, 'beforeend');
+        //note.attachTo(appRoot, 'beforeend');
+        this.page.addChild(note);
 
         const video = new VideoComponent('Video Title', 'https://www.youtube.com/embed/_NzL5UGgN2Y');
-        video.attachTo(appRoot, 'beforeend');
+        //video.attachTo(appRoot, 'beforeend');
+        this.page.addChild(video);
 
         const todo = new TodoComponent('Todo Title', 'Todo Item');
-        todo.attachTo(appRoot, 'beforeend');
+        //todo.attachTo(appRoot, 'beforeend');
+        this.page.addChild(todo);
     }
 }
 

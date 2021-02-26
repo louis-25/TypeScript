@@ -9,13 +9,13 @@ class App {
         this.page.attachTo(appRoot);
         const image = new ImageComponent('Image Title', 'https://picsum.photos/600/300');
         ;
-        image.attachTo(appRoot, 'beforeend');
+        this.page.addChild(image);
         const note = new NoteComponent('Note Title', 'Note Body');
-        note.attachTo(appRoot, 'beforeend');
+        this.page.addChild(note);
         const video = new VideoComponent('Video Title', 'https://www.youtube.com/embed/_NzL5UGgN2Y');
-        video.attachTo(appRoot, 'beforeend');
+        this.page.addChild(video);
         const todo = new TodoComponent('Todo Title', 'Todo Item');
-        todo.attachTo(appRoot, 'beforeend');
+        this.page.addChild(todo);
     }
 }
 new App(document.querySelector('.document'));
