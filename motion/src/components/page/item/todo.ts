@@ -11,6 +11,6 @@ export class TodoComponent extends BaseComponent<HTMLElement> {
         titleElement.textContent = title;
 
         const todoElement = this.element.querySelector('.todo-checkbox')! as HTMLInputElement;
-        todoElement.insertAdjacentText('afterend', todo);
+        todoElement.insertAdjacentText('afterend', todo); //insertAdjacentText - 상대적인 지정된 위치에 지정된 텍스트 노드를 삽입
     }
 }

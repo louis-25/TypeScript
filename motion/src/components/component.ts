@@ -2,8 +2,9 @@ export interface Component {
     attachTo(parent: HTMLElement, position?: InsertPosition): void;
 }
 
+//<T extends HTMLElement> - 타입이 HTMLElement라고 지정
 export class BaseComponent<T extends HTMLElement> implements Component{
-    protected readonly element: T; //protected는 자식클래스에서만 접근이 가능하다
+    protected readonly element: T; //protected는 상속된 자식클래스에서 접근이 가능하다
     
     constructor(htmlString: string) {
         const template = document.createElement('template');
