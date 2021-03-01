@@ -1,3 +1,4 @@
+import { InputDialog } from './components/fialog/dialog.js';
 import { ImageComponent } from './components/page/item/image.js';
 import { NoteComponent } from './components/page/item/note.js';
 import { TodoComponent } from './components/page/item/todo.js';
@@ -16,6 +17,17 @@ class App {
         this.page.addChild(video);
         const todo = new TodoComponent('Todo Title', 'Todo Item');
         this.page.addChild(todo);
+        const imageBtn = document.querySelector('#new-image');
+        imageBtn.addEventListener('click', () => {
+            const dialog = new InputDialog();
+            dialog.setOnCloseListener(() => {
+                dialog.removeFrom(document.body);
+            });
+            dialog.setOnCloseListener(() => {
+                dialog.removeFrom(document.body);
+            });
+            dialog.attachTo(document.body);
+        });
     }
 }
 new App(document.querySelector('.document'));
