@@ -1,11 +1,12 @@
 import React from 'react';
+import style from './TodoItem.module.css'
 
-const TodoItem: React.FC<{todo: string}> = (props) => {
+const TodoItem: React.FC<{ text: string; onRemoveTodo: () => void}> = (props) => {
   return (
-    <li>
-      {props.todo}
+    <li className={style.item} onClick={props.onRemoveTodo}>
+      {props.text}
     </li>
-  );
+  )
 };
 
 export default TodoItem;
